@@ -1,4 +1,4 @@
-<h3>ToDo list on Native JS.</h3>
+<h2>ToDo list on Native JS.</h2>
 
 This project was built with unusual methods on native JS. <br />
 It\`s completely lacks the static html markups, because the whole code is generating based on user actions, creating class objects and storing them in local storage for future use. <br /> 
