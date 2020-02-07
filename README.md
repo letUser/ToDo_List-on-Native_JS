@@ -7,3 +7,6 @@ The future of this project is gradually increasing the functionality and bring i
 
 <b>Make quick Pull Request:</b> <br />
 https://codesandbox.io/s/github/letUser/ToDo_List-on-Native_JS
+
+<b>See deployment:</b> <br />
+https://letuser.github.io/ToDo_List-on-Native_JS/
