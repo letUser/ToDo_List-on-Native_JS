@@ -104,7 +104,7 @@ list.classList.add("list");
 div.append(list);
 
 /* КНОПКА ДОБАВЛЕНИЯ ЗАДАЧИ ПО КЛИКУ*/
-bttn.onclick = function() {
+bttn.onclick = function () {
   if (checkEmpty() === false) {
     let task = new Task(input.value, null, false);
     task.showTask();
@@ -114,7 +114,7 @@ bttn.onclick = function() {
 };
 
 /* КНОПКА ДОБАВЛЕНИЯ ЗАДАЧИ ПО ENTER*/
-input.addEventListener("keyup", function(event) {
+input.addEventListener("keyup", function (event) {
   event.preventDefault();
   if (event.keyCode === 13) {
     if (checkEmpty() === false) {
@@ -151,11 +151,11 @@ function reStoreLocal(tasks) {
 }
 
 /* ИНИЦИАЦИЯ LOCALSTORAGE */
-window.onunload = function() {
+window.onunload = function () {
   // выгрузка при закрытии
   localStorage.setItem("tasks", JSON.stringify(tasks));
 };
-window.onload = function() {
+window.onload = function () {
   // загрузка при открытии
   if (localStorage.length !== 0) {
     reStoreLocal(JSON.parse(localStorage.getItem("tasks"))); // 133line

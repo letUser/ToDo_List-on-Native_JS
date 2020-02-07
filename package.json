@@ -2,18 +2,22 @@
   "name": "vanilla",
   "version": "1.0.0",
   "description": "JavaScript example starter project",
+  "type": "module",
   "main": "index.html",
   "scripts": {
-    "start": "parcel index.html --open",
-    "build": "parcel index.html build public"
+    "build": "webpack -p",
+    "watch": "webpack --watch"
   },
-  "dependencies": {},
+  "dependencies": {
+    "core-js": "^3.6.4",
+    "style-loader": "^1.1.3",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+  },
   "devDependencies": {
     "@babel/core": "7.2.0",
-    "parcel-bundler": "^1.6.1"
-  },
-  "keywords": [
-    "javascript",
-    "starter"
-  ]
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.2",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0"
+  }
 }
