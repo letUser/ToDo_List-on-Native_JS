@@ -142,7 +142,7 @@ let alertEmpty = () => {
 function reStoreLocal(tasks) {
   for (let task of tasks) {
     task = Object.assign(
-      new Task(task.text, task.elem, this.important),
+      new Task(task.text, task.elem, task.important),
       task
     );
     input.value = null;
