@@ -25,7 +25,9 @@ module.exports = {
             }
         ]
     },
-    plugins: [ 
-        new ExtractTextPlugin({filename: 'style.css'})
-      ]
+    plugins: [
+        new ExtractTextPlugin({
+            filename: 'style.css'
+        })
+    ]
 };

@@ -142,10 +142,10 @@ let alertEmpty = () => {
 function reStoreLocal(tasks) {
   for (let task of tasks) {
     task = Object.assign(
-      new Task(task["text"], task["elem"], task["important"]),
+      new Task(task.text, task.elem, this.important),
       task
     );
-    input.value = "1";
+    input.value = null;
     task.showTask();
   }
 }
@@ -158,6 +158,7 @@ window.onunload = function () {
 window.onload = function () {
   // загрузка при открытии
   if (localStorage.length !== 0) {
-    reStoreLocal(JSON.parse(localStorage.getItem("tasks"))); // 133line
+    tasks = JSON.parse(localStorage.getItem("tasks"));
+    reStoreLocal(tasks); // 133line
   }
 };
