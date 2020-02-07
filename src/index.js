@@ -145,7 +145,7 @@ function reStoreLocal(tasks) {
       new Task(task.text, task.elem, task.important),
       task
     );
-    input.value = null;
+    input.value = "1";
     task.showTask();
   }
 }
@@ -158,7 +158,6 @@ window.onunload = function () {
 window.onload = function () {
   // загрузка при открытии
   if (localStorage.length !== 0) {
-    tasks = JSON.parse(localStorage.getItem("tasks"));
-    reStoreLocal(tasks); // 133line
+    reStoreLocal(JSON.parse(localStorage.getItem("tasks"))); // 133line
   }
 };

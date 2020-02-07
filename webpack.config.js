@@ -1,6 +1,9 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
+    watchOptions: {
+        ignored: /node_modules/
+    },
     entry: {
         main: './src/index.js'
     },
