@@ -1,0 +1,140 @@
+body {
+  font-family: sans-serif;
+}
+
+.input {
+  margin: 0;
+  outline: none;
+  border-radius: 1.1vw 0 0 1.1vw;
+  padding: 1.3vw;
+  border: 1px solid rgb(255, 210, 155, 0.85);
+  color: #16476d;
+}
+
+.input::placeholder {
+  color: #b09b82;
+}
+
+.bttn {
+  padding: 1.3vw;
+  outline: none;
+  border-radius: 0 1.3vw 1.3vw 0;
+  background-color: rgb(255, 210, 155, 0.85);
+  border: 1px solid rgb(255, 210, 155, 0.85);
+  color: #706353;
+}
+
+.bttn:hover {
+  background-color: #fcdfbb;
+  cursor: pointer;
+}
+
+.important {
+  padding: 1vw;
+  margin: 1vw;
+  outline: none;
+  border-radius: 1.3vw;
+  background-color: rgb(255, 210, 155, 0.85);
+  border: 1px solid rgb(255, 210, 155, 0.85);
+  color: #706353;
+}
+
+.important:hover {
+  background-color: #fcdfbb;
+  cursor: pointer;
+}
+
+.ulRemove {
+  padding: 1vw;
+  margin: 0.2vw;
+  outline: none;
+  border-radius: 1.3vw;
+  background-color: rgb(255, 210, 155, 0.85);
+  border: 1px solid rgb(255, 210, 155, 0.85);
+  color: #706353;
+}
+
+.ulRemove:hover {
+  background-color: #fcdfbb;
+  cursor: pointer;
+}
+
+.ulText {
+  background-color: #fcdfbb;
+  padding: 0.9vw;
+  outline: none;
+  border-radius: 1.3vw;
+  background-color: rgb(255, 210, 155, 0.85);
+  border: 1px solid rgb(255, 210, 155, 0.85);
+  color: #706353;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+.inputUl {
+  padding: 1vw;
+}
+
+.bttnUl {
+  padding: 1vw;
+}
+
+.ul {
+  color: #5a5a5ae1;
+  font-size: 12px;
+  font-family: Robotic, cursive;
+}
+
+.li {
+  list-style-type: none;
+  color: #5a5a5ae1;
+  font-size: 12px;
+  font-family: Robotic, cursive;
+}
+
+.liText {
+  background-color: #fce9ce !important;
+  padding: 0.9vw;
+  outline: none;
+  border-radius: 1.3vw;
+  border: 1px solid #fce9ce !important;
+  color: #706353;
+  font-size: 14px;
+  font-family: sans-serif;
+  margin-left: 3vw;
+}
+
+.importantLi {
+  padding: 1vw;
+  margin: 1vw;
+  outline: none;
+  border-radius: 1.3vw;
+  background-color: #fce9ce;
+  border: 1px solid #fce9ce;
+  color: #706353;
+}
+
+.importantLi:hover {
+  background-color: #fcdfbb;
+  cursor: pointer;
+}
+
+.liRemove {
+  padding: 1vw;
+  margin: 0.2vw;
+  outline: none;
+  border-radius: 1.3vw;
+  background-color: #fce9ce;
+  border: 1px solid #fce9ce;
+  color: #706353;
+}
+
+.liRemove:hover {
+  background-color: #fcdfbb;
+  cursor: pointer;
+}
+
+.importantTask {
+  background-color: #f4c4b8;
+  border-radius: 2vw;
+}
