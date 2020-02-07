@@ -5,5 +5,5 @@ It\`s completely lacks the static html markups, because the whole code is genera
 
 The future of this project is gradually increasing the functionality and bring it to an assembler state, where the users can create for themselfs the most convenient models of interaction with app via the interface.
 
-Make quick Pull Request: <br />
+<b>Make quick Pull Request:</b> <br />
 https://codesandbox.io/s/github/letUser/ToDo_List-on-Native_JS
