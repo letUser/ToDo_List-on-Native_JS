@@ -16,10 +16,12 @@ class Task {
   /* РЕНДЕРИНГ ЗАДАЧИ НА СТРАНИЦЕ */
   showTask() {
     let li = document.createElement("li");
-    let liText = document.createElement("span");
-    let liRemove = document.createElement("input");
-    let importantBttn = document.createElement("input");
+    let liText = document.createElement("p");
+    let liRemove = document.createElement("button");
+    let importantBttn = document.createElement("button");
     let liDate = document.createElement("div");
+    let importantIcon = document.createElement("img");
+    let removeIcon = document.createElement("img");
 
     input.value = "";
     liText.textContent = this.text;
@@ -28,12 +30,14 @@ class Task {
     li.classList.add("li");
     list.prepend(li);
 
+    removeIcon.setAttribute("src", "./svg/times-solid.svg");
+    removeIcon.classList.add('removeIcon');
     liRemove.setAttribute("type", "button");
-    liRemove.setAttribute("value", "[x]");
-    liRemove.classList.add("ulRemove");
+    liRemove.classList.add("liRemove");
 
+    importantIcon.setAttribute("src", "./svg/exclamation-solid.svg");
+    importantIcon.classList.add('importantIcon');
     importantBttn.setAttribute("type", "button");
-    importantBttn.setAttribute("value", "[!]");
     importantBttn.classList.add("importantBttn");
 
     liDate.classList.add("liDate");
@@ -42,7 +46,9 @@ class Task {
 
     li.append(liText);
     li.append(importantBttn);
+    importantBttn.append(importantIcon);
     li.append(liRemove);
+    liRemove.append(removeIcon);
     li.append(liDate);
     this.elem = li;
 
@@ -95,7 +101,7 @@ class Task {
     let min = date.getMinutes();
     if (min < 10) min = "0" + min;
 
-    return `<p>${dd}.${mm}.${yy} <br /> ${hh}:${min}</p>`;
+    return `<p>${hh}:${min} <br /> ${dd}.${mm}.${yy}</p>`;
   }
 }
 
