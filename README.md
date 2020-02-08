@@ -10,3 +10,6 @@ https://codesandbox.io/s/github/letUser/ToDo_List-on-Native_JS
 
 <b>See deployment:</b> <br />
 https://letuser.github.io/ToDo_List-on-Native_JS/
+
+SVG provided by: <br />
+https://fontawesome.com/
