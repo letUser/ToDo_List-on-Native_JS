@@ -34,7 +34,7 @@ class Task {
 
     importantBttn.setAttribute("type", "button");
     importantBttn.setAttribute("value", "[!]");
-    importantBttn.classList.add("important");
+    importantBttn.classList.add("importantBttn");
 
     liDate.classList.add("liDate");
     if (this.initDate === null) this.initDate = this.createDate();
@@ -104,20 +104,24 @@ class Task {
 let input = document.createElement("input");
 let bttn = document.createElement("input");
 let div = document.createElement("div");
+let header = document.createElement("div");
 let list = document.createElement("ul");
 
 div.classList.add("main");
 document.body.append(div);
 
+header.classList.add("header");
+div.append(header);
+
 input.setAttribute("type", "text");
 input.setAttribute("placeholder", "Введите название задачи...");
 input.classList.add("input");
-div.append(input);
+header.append(input);
 
 bttn.setAttribute("type", "button");
 bttn.setAttribute("value", "Добавить задачу");
 bttn.classList.add("bttn");
-div.append(bttn);
+header.append(bttn);
 
 list.classList.add("list");
 div.append(list);
