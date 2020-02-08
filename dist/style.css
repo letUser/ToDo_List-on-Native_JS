@@ -4,7 +4,7 @@ body {
 }
 
 .header {
-  background-color: #ffe0bc94;
+  background-color: #eccda79c;
   padding: 1% 0 1% 10%;
 }
 
@@ -17,7 +17,7 @@ body {
   outline: none;
   border-radius: 1.1vw 0 0 1.1vw;
   padding: 1.3vw;
-  border: 1px solid rgb(255, 210, 155, 0.85);
+  border: 1px solid #8d827275;
   color: #16476d;
 }
 
@@ -30,7 +30,7 @@ body {
   outline: none;
   border-radius: 0 1.3vw 1.3vw 0;
   background-color: rgb(255, 210, 155, 0.85);
-  border: 1px solid rgb(255, 210, 155, 0.85);
+  border: 1px solid #8d827275;
   color: #706353;
 }
 
@@ -41,10 +41,9 @@ body {
 
 .importantBttn {
   position: relative;
-  display: inline-block;
+  display: inline;
   top: 0.3em;
   padding: 0.3em;
-  margin-left: 2.3em;
   outline: none;
   background: none;
   border: none;
@@ -74,6 +73,14 @@ body {
   font-size: 14px;
   font-family: sans-serif;
   margin: 1em 2em 0 2em;
+  text-align: justify;
+}
+
+.bttns {
+  position: relative;
+  display: inline;
+  vertical-align: top;
+  left: 1.5em;
 }
 
 .liRemove {
@@ -108,18 +115,18 @@ body {
   font-size: 1vw;
 }
 
-.liDate {
+.date {
   position: relative;
-  margin: 1em 1em 1em 1em;
-  font-family: Robotic, cursive;
-  font-size: 12px;
+  display: inline-block;
+  left: 42.95em;
 }
 
-.liDate p {
-  margin-block-start: 0;
-  margin-block-end: 0;
+.date p {
   text-align: right;
   color: #8d827267;
+  font-family: Robotic, cursive;
+  font-size: 11px;
+  margin: 0 0 0.5em 0;
 }
 
 .importantIcon {

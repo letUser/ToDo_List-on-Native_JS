@@ -17,6 +17,7 @@ class Task {
   showTask() {
     let li = document.createElement("li");
     let liText = document.createElement("p");
+    let bttns = document.createElement("div");
     let liRemove = document.createElement("button");
     let importantBttn = document.createElement("button");
     let liDate = document.createElement("div");
@@ -30,6 +31,8 @@ class Task {
     li.classList.add("li");
     list.prepend(li);
 
+    bttns.classList.add("bttns");
+
     removeIcon.setAttribute("src", "./svg/times-solid.svg");
     removeIcon.classList.add('removeIcon');
     liRemove.setAttribute("type", "button");
@@ -40,14 +43,15 @@ class Task {
     importantBttn.setAttribute("type", "button");
     importantBttn.classList.add("importantBttn");
 
-    liDate.classList.add("liDate");
+    liDate.classList.add("date");
     if (this.initDate === null) this.initDate = this.createDate();
     liDate.innerHTML = this.initDate;
 
     li.append(liText);
-    li.append(importantBttn);
+    li.append(bttns)
+    bttns.append(importantBttn);
     importantBttn.append(importantIcon);
-    li.append(liRemove);
+    bttns.append(liRemove);
     liRemove.append(removeIcon);
     li.append(liDate);
     this.elem = li;
