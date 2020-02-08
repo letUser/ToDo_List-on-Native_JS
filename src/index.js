@@ -1,7 +1,8 @@
 import "./styles.css";
 
-let tasks = []; // МАССИВ ЗАДАНИЙ
+let tasks = []; // ARRAY OF TASKS // МАССИВ ЗАДАНИЙ
 
+/* TASK OBJECT TEMPLATE */
 /* ШАБЛОН ОБЪЕКТА ЗАДАНИЯ */
 class Task {
   constructor(text, elem, important, initDate) {
@@ -11,6 +12,7 @@ class Task {
     this.initDate = initDate;
   }
 
+  /* TASK RENDERING ON THE PAGE */
   /* РЕНДЕРИНГ ЗАДАЧИ НА СТРАНИЦЕ */
   showTask() {
     let li = document.createElement("li");
@@ -52,6 +54,7 @@ class Task {
     tasks.push(this);
   }
 
+  /* METHOD IMPORTANT/COMMON */
   /* МЕТОД ВАЖНОЕ/НЕВАЖНОЕ */
   importantBranch() {
     if (this.important === false) {
@@ -64,6 +67,7 @@ class Task {
     }
   }
 
+  /* METHOD OF DELETING TASK FROM THE PAGE AND ARRAY */
   /* МЕТОД УДАЛЕНИЯ ЗАДАЧИ СО СТР И МАССИВА */
   removeBranch() {
     this.elem.remove();
@@ -72,7 +76,8 @@ class Task {
     }
   }
 
-  /* МЕТОД СОЗДАНИЯ СТРОКИ С ДАТОЙ */
+  /* METHOD OF DATE CREATION AS A STRING */
+  /* МЕТОД СОЗДАНИЯ ДАТЫ КАК СТРОКИ */
   createDate() {
     let date = new Date();
 
@@ -94,6 +99,7 @@ class Task {
   }
 }
 
+/* PRIMARY RENDERING OF THE PAGE */
 /* ПЕРВИЧНЫЙ РЕНДЕРИНГ СТР */
 let input = document.createElement("input");
 let bttn = document.createElement("input");
@@ -116,6 +122,7 @@ div.append(bttn);
 list.classList.add("list");
 div.append(list);
 
+/* BUTTON OF ADDING TASK BY CLICK */
 /* КНОПКА ДОБАВЛЕНИЯ ЗАДАЧИ ПО КЛИКУ*/
 bttn.onclick = function () {
   if (checkEmpty() === false) {
@@ -126,6 +133,7 @@ bttn.onclick = function () {
   }
 };
 
+/* BUTTON OF ADDING TASK BY ENTER */
 /* КНОПКА ДОБАВЛЕНИЯ ЗАДАЧИ ПО ENTER*/
 input.addEventListener("keyup", function (event) {
   event.preventDefault();
@@ -139,6 +147,7 @@ input.addEventListener("keyup", function (event) {
   }
 });
 
+/* EMPTY CHECK OF INPUT.VALUE FUNC */
 /* ФУНКЦИЯ ПРОВЕРКИ ПУСТОТЫ INPUT */
 let checkEmpty = () => (input.value.trim() === "" ? true : false);
 
@@ -151,7 +160,8 @@ let alertEmpty = () => {
   setTimeout(() => alertEmpty.remove(), 3000); // убираем алерт
 };
 
-/* ФУНКЦИЯ РЕНДЕРИНГА КЛАССА ИЗ LOCALSTORAGE */
+/* FUNC OF RENDERING OBJ BY CLASS FROM LOCALSTORAGE */
+/* ФУНКЦИЯ РЕНДЕРИНГА КЛАССА ИЗ ЛОКАЛЬНОГО ХРАНИЛИЩА */
 function reStoreLocal(tasks) {
   for (let task of tasks) {
     task = Object.assign(
@@ -163,13 +173,14 @@ function reStoreLocal(tasks) {
   }
 }
 
+/* LOCALSTORAGE INITIALIZATION */
 /* ИНИЦИАЦИЯ LOCALSTORAGE */
 window.onunload = function () {
-  // выгрузка при закрытии
+  //onunload when closing // выгрузка при закрытии
   localStorage.setItem("tasks", JSON.stringify(tasks));
 };
 window.onload = function () {
-  // загрузка при открытии
+  //onload when open // загрузка при открытии
   if (localStorage.length !== 0) {
     reStoreLocal(JSON.parse(localStorage.getItem("tasks")));
   }
