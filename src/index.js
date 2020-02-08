@@ -38,7 +38,7 @@ class Task {
 
     liDate.classList.add("liDate");
     if (this.initDate === null) this.initDate = this.createDate();
-    liDate.textContent = this.initDate;
+    liDate.innerHTML = this.initDate;
 
     li.append(liText);
     li.append(importantBttn);
@@ -95,7 +95,7 @@ class Task {
     let min = date.getMinutes();
     if (min < 10) min = "0" + min;
 
-    return `${dd}.${mm}.${yy}. ${hh}:${min}`;
+    return `<p>${dd}.${mm}.${yy} <br /> ${hh}:${min}</p>`;
   }
 }
 

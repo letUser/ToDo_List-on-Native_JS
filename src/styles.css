@@ -131,7 +131,14 @@ body {
 }
 
 .liDate {
-  padding: 0 2% 2% 75%;
+  position: relative;
+  padding: 0 2% 2% 33vw;
   font-family: Robotic, cursive;
   font-size: 12px;
+}
+
+.liDate p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  text-align: right;
 }
