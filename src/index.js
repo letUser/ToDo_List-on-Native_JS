@@ -39,6 +39,7 @@ class Task {
     this.elem = li;
     liRemove.onclick = this.removeBranch.bind(this);
     importantBttn.onclick = this.importantBranch.bind(this);
+    if (this.important === true) this.elem.classList.add("importantTask");
     tasks.push(this);
   }
 
@@ -145,7 +146,7 @@ function reStoreLocal(tasks) {
       new Task(task.text, task.elem, task.important),
       task
     );
-    input.value = "1";
+    input.value = "/";
     task.showTask();
   }
 }
