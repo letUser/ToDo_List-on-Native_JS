@@ -48,7 +48,7 @@ class Task {
     liDate.innerHTML = this.initDate;
 
     li.append(liText);
-    li.append(bttns)
+    li.append(bttns);
     bttns.append(importantBttn);
     importantBttn.append(importantIcon);
     bttns.append(liRemove);
