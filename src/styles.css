@@ -138,3 +138,14 @@ body {
   background-color: #f4c4b8;
   border-radius: 2vw;
 }
+
+.alert {
+  top: 15%;
+  border: 1px solid #c9b392;
+  border-radius: 2vw;
+  background-color: #fce9ce;
+  text-align: center;
+  max-width: 30%;
+  color: #706455;
+  padding: 1.3vw;
+}

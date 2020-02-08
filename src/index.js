@@ -155,8 +155,9 @@ let checkEmpty = () => (input.value.trim() === "" ? true : false);
 /* ФУНКЦИЯ СОЗДАНИЯ СООБЩЕНИЯ ОБ ОШИБКЕ ПУСТОТЫ ДЛЯ INPUT.VALUE*/
 let alertEmpty = () => {
   let alertEmpty = document.createElement("div");
+  alertEmpty.classList.add("alert");
   alertEmpty.textContent = "Вы ничего не написали!";
-  list.append(alertEmpty);
+  document.body.append(alertEmpty);
 
   setTimeout(() => alertEmpty.remove(), 3000); // убираем алерт
 };
