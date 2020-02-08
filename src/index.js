@@ -4,42 +4,51 @@ let tasks = []; // МАССИВ ЗАДАНИЙ
 
 /* ШАБЛОН ОБЪЕКТА ЗАДАНИЯ */
 class Task {
-  constructor(text, elem, important) {
+  constructor(text, elem, important, initDate) {
     this.text = text;
     this.elem = elem;
     this.important = important;
+    this.initDate = initDate;
   }
 
   /* РЕНДЕРИНГ ЗАДАЧИ НА СТРАНИЦЕ */
   showTask() {
     let li = document.createElement("li");
     let liText = document.createElement("span");
-    let date = new Date();
     let liRemove = document.createElement("input");
     let importantBttn = document.createElement("input");
     let liDate = document.createElement("div");
 
+    input.value = "";
     liText.textContent = this.text;
+    liText.classList.add("liText");
+
     li.classList.add("li");
     list.prepend(li);
-    input.value = "";
-    liText.classList.add("liText");
+
     liRemove.setAttribute("type", "button");
     liRemove.setAttribute("value", "[x]");
     liRemove.classList.add("ulRemove");
+
     importantBttn.setAttribute("type", "button");
     importantBttn.setAttribute("value", "[!]");
     importantBttn.classList.add("important");
+
     liDate.classList.add("liDate");
-    liDate = this.showDate(date);
+    if (this.initDate === null) this.initDate = this.createDate();
+    liDate.textContent = this.initDate;
+
     li.append(liText);
     li.append(importantBttn);
     li.append(liRemove);
     li.append(liDate);
     this.elem = li;
+
     liRemove.onclick = this.removeBranch.bind(this);
     importantBttn.onclick = this.importantBranch.bind(this);
+
     if (this.important === true) this.elem.classList.add("importantTask");
+
     tasks.push(this);
   }
 
@@ -48,6 +57,7 @@ class Task {
     if (this.important === false) {
       this.important = true;
       this.elem.classList.add("importantTask");
+
     } else if (this.important === true) {
       this.important = false;
       this.elem.classList.remove("importantTask");
@@ -63,7 +73,9 @@ class Task {
   }
 
   /* МЕТОД СОЗДАНИЯ СТРОКИ С ДАТОЙ */
-  showDate(date) {
+  createDate() {
+    let date = new Date();
+
     let dd = date.getDate();
     if (dd < 10) dd = "0" + dd;
 
@@ -107,7 +119,7 @@ div.append(list);
 /* КНОПКА ДОБАВЛЕНИЯ ЗАДАЧИ ПО КЛИКУ*/
 bttn.onclick = function () {
   if (checkEmpty() === false) {
-    let task = new Task(input.value, null, false);
+    let task = new Task(input.value, null, false, null);
     task.showTask();
   } else {
     alertEmpty();
@@ -119,7 +131,7 @@ input.addEventListener("keyup", function (event) {
   event.preventDefault();
   if (event.keyCode === 13) {
     if (checkEmpty() === false) {
-      let task = new Task(input.value, null, false);
+      let task = new Task(input.value, null, false, null);
       task.showTask();
     } else {
       alertEmpty();
@@ -143,7 +155,7 @@ let alertEmpty = () => {
 function reStoreLocal(tasks) {
   for (let task of tasks) {
     task = Object.assign(
-      new Task(task.text, task.elem, task.important),
+      new Task(task.text, task.elem, task.important, task.initDate),
       task
     );
     input.value = "/";
@@ -159,6 +171,6 @@ window.onunload = function () {
 window.onload = function () {
   // загрузка при открытии
   if (localStorage.length !== 0) {
-    reStoreLocal(JSON.parse(localStorage.getItem("tasks"))); // 133line
+    reStoreLocal(JSON.parse(localStorage.getItem("tasks")));
   }
 };
