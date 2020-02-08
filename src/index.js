@@ -151,7 +151,8 @@ input.addEventListener("keyup", function (event) {
 /* ФУНКЦИЯ ПРОВЕРКИ ПУСТОТЫ INPUT */
 let checkEmpty = () => (input.value.trim() === "" ? true : false);
 
-/* ФУНКЦИЯ СОЗДАНИЯ СООБЩЕНИЯ ОБ ОШИБКЕ */
+/* ALERT EMPTY CREATION FOR INPUT.VALUE FUNC */
+/* ФУНКЦИЯ СОЗДАНИЯ СООБЩЕНИЯ ОБ ОШИБКЕ ПУСТОТЫ ДЛЯ INPUT.VALUE*/
 let alertEmpty = () => {
   let alertEmpty = document.createElement("div");
   alertEmpty.textContent = "Вы ничего не написали!";
