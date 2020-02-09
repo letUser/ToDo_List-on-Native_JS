@@ -56,7 +56,7 @@ body {
   cursor: pointer;
 }
 
-.li {
+.task {
   opacity: 0;
   list-style-type: none;
   color: #5a5a5ae1;
@@ -68,7 +68,7 @@ body {
   margin: 1vw auto 1vw auto;
 }
 
-.liText {
+.taskText {
   position: relative;
   display: inline-block;
   color: #706353;
@@ -86,7 +86,7 @@ body {
   left: 1.5em;
 }
 
-.liRemove {
+.taskRemove {
   position: relative;
   top: 0.3em;
   padding: 0.3em;
@@ -95,7 +95,7 @@ body {
   border: none;
 }
 
-.liRemove:hover {
+.taskRemove:hover {
   cursor: pointer;
 }
 
@@ -180,7 +180,7 @@ body {
     padding: 1em;
   }
 
-  .liText {
+  .taskText {
     width: 65vw;
   }
 
@@ -219,7 +219,7 @@ body {
 
 @media screen and (max-width: 320px) {
 
-  .liText {
+  .taskText {
     margin: 1em 1.5em 0 1.5em;
   }
 

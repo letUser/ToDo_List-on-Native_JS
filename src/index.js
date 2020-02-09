@@ -16,49 +16,49 @@ class Task {
   /* TASK RENDERING ON THE PAGE */
   /* РЕНДЕРИНГ ЗАДАЧИ НА СТРАНИЦЕ */
   showTask() {
-    let li = document.createElement("li");
-    let liText = document.createElement("p");
+    let task = document.createElement("task");
+    let taskText = document.createElement("p");
     let bttns = document.createElement("div");
-    let liRemove = document.createElement("button");
+    let taskRemove = document.createElement("button");
     let importantBttn = document.createElement("button");
-    let liDate = document.createElement("div");
+    let taskDate = document.createElement("div");
     let importantIcon = document.createElement("img");
     let removeIcon = document.createElement("img");
 
     input.value = "";
-    liText.textContent = this.text;
-    liText.classList.add("liText");
+    taskText.textContent = this.text;
+    taskText.classList.add("taskText");
 
-    li.classList.add("li");
-    list.append(li);
+    task.classList.add("task");
+    list.append(task);
 
     bttns.classList.add("bttns");
 
     removeIcon.setAttribute("src", "./svg/times-solid.svg");
     removeIcon.classList.add('removeIcon');
-    liRemove.setAttribute("type", "button");
-    liRemove.classList.add("liRemove");
+    taskRemove.setAttribute("type", "button");
+    taskRemove.classList.add("taskRemove");
 
     importantIcon.setAttribute("src", "./svg/exclamation-solid.svg");
     importantIcon.classList.add('importantIcon');
     importantBttn.setAttribute("type", "button");
     importantBttn.classList.add("importantBttn");
 
-    liDate.classList.add("date");
+    taskDate.classList.add("date");
     if (this.initDate === null) this.initDate = this.createDate();
-    liDate.innerHTML = this.initDate;
+    taskDate.innerHTML = this.initDate;
 
-    li.append(liText);
-    li.append(bttns);
+    task.append(taskText);
+    task.append(bttns);
     bttns.append(importantBttn);
     importantBttn.append(importantIcon);
-    bttns.append(liRemove);
-    liRemove.append(removeIcon);
-    li.append(liDate);
-    this.elem = li;
+    bttns.append(taskRemove);
+    taskRemove.append(removeIcon);
+    task.append(taskDate);
+    this.elem = task;
 
-    liRemove.addEventListener('click', this.removeBranch.bind(this));
-    importantBttn.addEventListener('click', this.importantBranch.bind(this));
+    taskRemove.addEventListener('click', this.removeTask.bind(this));
+    importantBttn.addEventListener('click', this.importantTask.bind(this));
 
     if (this.important === true) this.elem.classList.add("importantTask");
 
@@ -67,7 +67,7 @@ class Task {
     /* ANIMATION OF EASE OUT FOR TASKS */
     /* АНИМАЦИЯ ПОЯВЛЕНИЯ ЗАДАЧ */
     anime({
-      targets: ".li",
+      targets: ".task",
       duration: 750,
       opacity: 1,
       easing: 'easeInOutSine',
@@ -76,7 +76,7 @@ class Task {
 
   /* METHOD IMPORTANT/COMMON */
   /* МЕТОД ВАЖНОЕ/НЕВАЖНОЕ */
-  importantBranch() {
+  importantTask() {
     if (this.important === false) {
       anime({
         targets: this.elem,
@@ -103,7 +103,7 @@ class Task {
 
   /* METHOD OF DELETING TASK FROM THE PAGE AND ARRAY */
   /* МЕТОД УДАЛЕНИЯ ЗАДАЧИ СО СТР И МАССИВА */
-  removeBranch() {
+  removeTask() {
     anime({
       targets: this.elem,
       duration: 1000,
