@@ -5,7 +5,7 @@ body {
 
 .header {
   background-color: #eccda79c;
-  padding: 1% 0 1% 10%;
+  padding: 1em 0 1em 10em;
 }
 
 .list {
@@ -15,8 +15,8 @@ body {
 .input {
   margin: 0;
   outline: none;
-  border-radius: 1.1vw 0 0 1.1vw;
-  padding: 1.3vw;
+  border-radius: 1.5em 0 0 1.5em;
+  padding: 1.3em;
   border: 1px solid #8d827275;
   color: #16476d;
 }
@@ -26,9 +26,9 @@ body {
 }
 
 .bttn {
-  padding: 1.3vw;
+  padding: 1.3em;
   outline: none;
-  border-radius: 0 1.3vw 1.3vw 0;
+  border-radius: 0 1.5em 1.5em 0;
   background-color: rgb(255, 210, 155, 0.85);
   border: 1px solid #8d827275;
   color: #706353;
@@ -149,4 +149,84 @@ body {
 .removeIcon:hover {
   transform: scale(1.6);
   opacity: 1;
+}
+
+@media screen and (max-width: 759px) {
+
+  .body {
+    max-width: 100%;
+  }
+
+
+}
+
+@media screen and (max-width: 420px) {
+
+  .body {
+    max-width: 100%;
+  }
+
+  .header {
+    padding: 4% 0 4% 10%;
+  }
+
+  .input {
+    padding: 1em;
+  }
+
+  .bttn {
+    padding: 1em;
+  }
+
+  .liText {
+    width: 65vw;
+  }
+
+  .bttns {
+    top: 0.35em;
+  }
+
+  .date {
+    left: 80.5vw;
+  }
+
+  .date p {
+    margin: 0.5em 0 0.5em 0;
+    font-size: 10px;
+  }
+
+}
+
+@media screen and (max-width: 375px) {
+
+  .input {
+    padding: 0.8em;
+    width: 40%;
+  }
+
+  .bttn {
+    width: 42%;
+    padding: 0.8em 0 0.8em 0;
+  }
+
+  .date {
+    left: 82.5vw;
+  }
+
+}
+
+@media screen and (max-width: 320px) {
+
+  .liText {
+    margin: 1em 1.5em 0 1.5em;
+  }
+
+  .bttns {
+    left: 0.5em;
+  }
+
+  .date {
+    left: 76vw;
+  }
+
 }

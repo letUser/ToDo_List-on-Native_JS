@@ -124,7 +124,7 @@ header.classList.add("header");
 div.append(header);
 
 input.setAttribute("type", "text");
-input.setAttribute("placeholder", "Введите название задачи...");
+input.setAttribute("placeholder", "Введите задачу...");
 input.classList.add("input");
 header.append(input);
 
