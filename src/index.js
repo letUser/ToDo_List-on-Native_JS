@@ -64,6 +64,8 @@ class Task {
 
     tasks.push(this);
 
+    /* ANIMATION OF EASE OUT FOR TASKS */
+    /* АНИМАЦИЯ ПОЯВЛЕНИЯ ЗАДАЧ */
     anime({
       targets: ".li",
       duration: 750,
