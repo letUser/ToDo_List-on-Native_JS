@@ -59,7 +59,7 @@ body {
   color: #5a5a5ae1;
   background-color: #fce9ce94;
   border: 1px solid #8d827275;
-  border-radius: 1.4vw;
+  border-radius: 1em;
   max-width: 48em;
   display: block;
   margin: 1vw auto 1vw auto;
@@ -98,21 +98,20 @@ body {
 
 .importantTask {
   background-color: #f3cfc6b6;
-  border-radius: 1.4vw;
 }
 
 .alert {
   top: 1.5%;
   left: 44vw;
   border: 1px solid #c9b392;
-  border-radius: 2vw;
+  border-radius: 1.5em;
   background-color: #f3cfc6b6;
   text-align: center;
   max-width: 30%;
   color: #706455;
-  padding: 1.3vw;
+  padding: 1em;
   position: absolute;
-  font-size: 1vw;
+  font-size: 14px;
 }
 
 .date {
