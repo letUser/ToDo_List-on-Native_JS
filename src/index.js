@@ -1,4 +1,6 @@
 import "./styles.css";
+import "./animation.js";
+import anime from 'animejs/lib/anime.es.js';
 
 let tasks = []; // ARRAY OF TASKS // МАССИВ ЗАДАНИЙ
 
@@ -56,12 +58,19 @@ class Task {
     li.append(liDate);
     this.elem = li;
 
-    liRemove.onclick = this.removeBranch.bind(this);
-    importantBttn.onclick = this.importantBranch.bind(this);
+    liRemove.addEventListener('click', this.removeBranch.bind(this));
+    importantBttn.addEventListener('click', this.importantBranch.bind(this));
 
     if (this.important === true) this.elem.classList.add("importantTask");
 
     tasks.push(this);
+
+    anime({
+      targets: ".li",
+      duration: 750,
+      opacity: 1,
+      easing: 'easeInOutSine',
+    });
   }
 
   /* METHOD IMPORTANT/COMMON */
@@ -123,10 +132,31 @@ document.body.append(div);
 header.classList.add("header");
 div.append(header);
 
+/* ANIMATION OF EASE OUT FOR HEADER */
+/* АНИМАЦИЯ ПОЯВЛЕНИЯ ХЕДЕРА */
+anime({
+  targets: ".header",
+  duration: 750,
+  opacity: 1,
+  easing: 'easeInOutSine',
+});
+
 input.setAttribute("type", "text");
 input.setAttribute("placeholder", "Введите задачу...");
 input.classList.add("input");
 header.append(input);
+
+/* EVENTS FOR INPUT FORM PLACEHOLDER */
+/* ИМЕНТЫ ДЛЯ ПЛЕЙСХОЛДЕРА ИНПУТА */
+input.onmouseover = function () {
+  input.setAttribute("placeholder", "Осталось лишь кликнуть...");
+};
+input.onfocus = function () {
+  input.setAttribute("placeholder", " ");
+};
+input.onmouseout = function () {
+  input.setAttribute("placeholder", "Введите задачу...");
+};
 
 bttn.setAttribute("type", "button");
 bttn.setAttribute("value", "Добавить задачу");

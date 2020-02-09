@@ -6,6 +6,7 @@ body {
 .header {
   background-color: #eccda79c;
   padding: 1em 0 1em 10em;
+  opacity: 0;
 }
 
 .list {
@@ -55,6 +56,7 @@ body {
 }
 
 .li {
+  opacity: 0;
   list-style-type: none;
   color: #5a5a5ae1;
   background-color: #fce9ce94;
