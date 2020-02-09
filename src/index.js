@@ -45,7 +45,7 @@ class Task {
     importantBttn.classList.add("importantBttn");
 
     taskDate.classList.add("date");
-    if (this.initDate === null) this.initDate = this.createDate();
+    if (this.initDate === null) this.initDate = this.createDate(); // date check // проверка наличи даты
     taskDate.innerHTML = this.initDate;
 
     task.append(taskText);
@@ -78,6 +78,8 @@ class Task {
   /* МЕТОД ВАЖНОЕ/НЕВАЖНОЕ */
   importantTask() {
     if (this.important === false) {
+      /* ANIMATION OF IMPORTANT FOR TASKS */
+      /* АНИМАЦИЯ ВАЖНЫХ ЗАДАЧ */
       anime({
         targets: this.elem,
         duration: 500,
@@ -104,6 +106,8 @@ class Task {
   /* METHOD OF DELETING TASK FROM THE PAGE AND ARRAY */
   /* МЕТОД УДАЛЕНИЯ ЗАДАЧИ СО СТР И МАССИВА */
   removeTask() {
+    /* ANIMATION OF DELETING TASKS */
+    /* АНИМАЦИЯ УДАЛЕНИЯ ЗАДАЧ */
     anime({
       targets: this.elem,
       duration: 1000,
