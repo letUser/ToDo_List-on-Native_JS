@@ -1,5 +1,4 @@
 import "./styles.css";
-import "./animation.js";
 import anime from 'animejs/lib/anime.es.js';
 
 let tasks = []; // ARRAY OF TASKS // МАССИВ ЗАДАНИЙ
