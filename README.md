@@ -13,3 +13,6 @@ https://letuser.github.io/ToDo_List-on-Native_JS/
 
 SVG provided by: <br />
 https://fontawesome.com/
+
+Animations powered by: <br />
+https://animejs.com/
