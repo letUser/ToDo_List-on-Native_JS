@@ -31,7 +31,7 @@ class Task {
     liText.classList.add("liText");
 
     li.classList.add("li");
-    list.prepend(li);
+    list.append(li);
 
     bttns.classList.add("bttns");
 
