@@ -18,7 +18,8 @@ body {
   outline: none;
   border-radius: 1.5em 0 0 1.5em;
   padding: 1.3em;
-  border: 1px solid #8d827275;
+  border: 1px solid #8a776094;
+  border-right: 0;
   color: #16476d;
 }
 

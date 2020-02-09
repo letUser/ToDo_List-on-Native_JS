@@ -78,6 +78,20 @@ class Task {
   /* МЕТОД ВАЖНОЕ/НЕВАЖНОЕ */
   importantBranch() {
     if (this.important === false) {
+      anime({
+        targets: this.elem,
+        duration: 500,
+        scale: [{
+            value: 1.1,
+            duration: 500
+          },
+          {
+            value: 1,
+            duration: 500
+          }
+        ],
+        easing: 'easeInOutSine',
+      });
       this.important = true;
       this.elem.classList.add("importantTask");
 
@@ -90,7 +104,13 @@ class Task {
   /* METHOD OF DELETING TASK FROM THE PAGE AND ARRAY */
   /* МЕТОД УДАЛЕНИЯ ЗАДАЧИ СО СТР И МАССИВА */
   removeBranch() {
-    this.elem.remove();
+    anime({
+      targets: this.elem,
+      duration: 1000,
+      opacity: 0,
+      easing: 'easeInOutSine',
+    })
+    setTimeout(() => this.elem.remove(), 500);
     for (let el of tasks) {
       if (el.text === this.text) tasks.splice(tasks.indexOf(el), 1);
     }
